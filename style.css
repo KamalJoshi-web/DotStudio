@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/gotham/gotham/GothamLight.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/gotham/gotham/GothamBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/gotham/gotham/GothamMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: medium;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Gotham", sans-serif;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-block: 1rem;
+  max-width: 1440px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.heading {
+  color: #1c1c1c;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  > span {
+    color: #114a8d;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.card {
+  width: 100%;
+  max-width: 511px;
+  max-height: 330px;
+  height: 100%;
+  border-radius: 8px;
+  position: relative;
+
+  /* Card Elements */
+  > img {
+    border-radius: 8px;
+    width: 100%;
+  }
+  > div {
+    position: absolute;
+    bottom: 0%;
+    background: linear-gradient(
+      180.68deg,
+      rgba(0, 0, 0, 0) -9.3%,
+      rgba(0, 0, 0, 0.59) 48.1%,
+      #000000 99.41%
+    );
+    height: 40%;
+    border-radius: 0px 0px 8px 8px;
+    width: 100%;
+    > h2 {
+      font-weight: 600;
+      line-height: 30.8px;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+      top: 33%;
+      .highlighted {
+        color: #ffc758;
+      }
+    }
+    > p {
+      visibility: hidden;
+      font-weight: 400;
+      line-height: 26px;
+      font-size: 20px;
+      color: #ffffff;
+      padding: 20px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+/* Card Hover State */
+
+.card:hover {
+  > div {
+    animation: slideIn 1s forwards;
+    background: #114a8dcc;
+    border-radius: 0px;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    > h2 {
+      animation: slideInTop 1.5s forwards;
+    }
+    > p {
+      animation: slideInBottom 2s forwards;
+      visibility: visible;
+    }
+  }
+}
+@keyframes slideIn {
+  0% {
+    height: 1%;
+    opacity: 0;
+    width: 1%;
+  }
+
+  100% {
+    height: 90%;
+    opacity: 1;
+    width: 100%;
+  }
+}
+@keyframes slideInTop {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
